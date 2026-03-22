@@ -1,0 +1,279 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background-color: #f4f7fb;
+    color: #1f2937;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-links a {
+    color: #4b5563;
+    font-size: 14px;
+}
+
+.hero {
+    padding: 64px 0 40px;
+}
+
+.hero-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    margin: 0 0 16px;
+    font-size: 36px;
+    line-height: 1.3;
+}
+
+.hero p {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-secondary {
+    background-color: #eef2ff;
+    color: #3730a3;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e7ff;
+}
+
+.section {
+    padding: 20px 0 60px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.info-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.info-card p {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.notice {
+    margin-top: 20px;
+    padding: 16px 18px;
+    background-color: #fff7ed;
+    border: 1px solid #fdba74;
+    color: #9a3412;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.page-header {
+    padding: 40px 0 24px;
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+}
+
+.page-header p {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.form-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    margin-bottom: 60px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #111827;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.15);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+.form-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.helper-text {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-card,
+    .form-card {
+        padding: 24px;
+    }
+
+    .grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar-inner {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        height: auto;
+        padding: 12px 0;
+    }
+}

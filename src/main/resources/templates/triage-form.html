@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康状態入力</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container navbar-inner">
+        <a th:href="@{/}" class="logo">Health Compass</a>
+        <nav class="nav-links">
+            <a th:href="@{/}">ホーム</a>
+            <a th:href="@{/triage}">健康状態入力</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="page-header">
+        <div class="container">
+            <h1>健康状態入力フォーム</h1>
+            <p>
+                体調が気になるとき、少し不安になりますよね。<br>
+                今の状態をゆっくり整理する感覚で、わかる範囲で入力してみてください。
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="form-card">
+                <form th:action="@{/triage}" th:object="${healthRecordForm}" method="post">
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="temperature">体温</label>
+                            <input id="temperature" type="number" step="0.1" th:field="*{temperature}" placeholder="例：37.8">
+                            <div class="helper-text">測定していない場合は空欄でも構いません。</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heartRate">心拍数</label>
+                            <input id="heartRate" type="number" th:field="*{heartRate}" placeholder="例：88">
+                            <div class="helper-text">わかる場合のみ入力してください。</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="oxygenLevel">血中酸素濃度</label>
+                            <input id="oxygenLevel" type="number" th:field="*{oxygenLevel}" placeholder="例：98">
+                            <div class="helper-text">測定していない場合は空欄でも構いません。</div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>注意が必要な症状</label>
+                            <div class="checkbox-group">
+                                <input id="dangerSign" type="checkbox" th:field="*{dangerSign}">
+                                <label for="dangerSign">呼吸のしづらさ、強い痛み、意識の異常など、明らかに強い症状がある</label>
+                            </div>
+                            <div class="helper-text">この項目はデモ用の判定条件であり、医療上の診断ではありません。</div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="symptomNote">症状メモ</label>
+                            <textarea id="symptomNote" th:field="*{symptomNote}" placeholder="例：2日前から続いている、夜になると悪化する、だるさもある など"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">評価する</button>
+                        <a th:href="@{/}" class="btn btn-secondary">ホームに戻る</a>
+                    </div>
+
+                    <div class="notice">
+                        本システムは情報整理および受診判断の参考を目的としたものであり、医療診断を行うものではありません。
+                        症状が続く場合や悪化した場合、または緊急性がある場合は、速やかに医療機関へご相談ください。
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
+   
